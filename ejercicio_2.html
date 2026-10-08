@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 2</title>
+</head>
+<body>
+    <h1>Ingresa un número de uno, dos o tres dígitos.</h1>
+
+    <input type="text" id="num" />
+    <button onclick="calcular()">Enviar</button>
+
+    <p id="result"></p>
+
+    <script>
+        function calcular() {
+            let $numero = 0, $unidades = 0, $decenas = 0, $centenas = 0;
+
+            $numero = parseInt(document.getElementById("num").value);
+
+            if ($numero < 10 && $numero >= 0) {
+                document.getElementById("result").innerHTML = `Unidades: ${$numero}`;
+            } else if ($numero >= 10 && $numero < 100) {
+                $unidades = ($numero % 10);
+                $decenas = parseInt($numero / 10);
+                document.getElementById("result").innerHTML = `Unidades: ${$unidades}<br>Decenas: ${$decenas}`;
+            } else if ($numero >= 100 && $numero <= 999) {
+                $unidades = ($numero % 10);
+                $decenas = (parseInt($numero / 10) % 10);
+                $centenas = parseInt($numero / 100);
+                document.getElementById("result").innerHTML = `Unidades: ${$unidades}<br>Decenas: ${$decenas}<br>Centenas: ${$centenas}`;
+            } else {
+                document.getElementById("result").innerHTML = "Datos no válidos. Inténtelo de nuevo.";
+            }
+        }
+    </script>
+</body>
+</html>
