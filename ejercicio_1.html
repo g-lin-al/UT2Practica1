@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 1</title>
+</head>
+<body>
+    <p id="datos_pers"></p>
+
+    <table border="1">
+        <tr>
+            <td id="1"></td>
+            <td id="2"></td>
+            <td id="3"></td>
+            <td id="4"></td>
+        </tr>
+        <tr>
+            <td id="5"></td>
+            <td id="6"></td>
+            <td colspan="2" id="7"></td>
+        </tr>
+    </table>
+    <p id="modulo_fav_p"></p>
+    <input type="text" id="modulo_fav_input" />
+    <button onclick="generarFavorito()">Favorito</button>
+
+    <script>
+        let $nombre = "Guille", $apellidos = "Líndez Alonso", $curso = "2º DAW";
+
+        document.getElementById("datos_pers").innerHTML = `${$nombre}<br>${$apellidos}<br>${$curso}`;
+        document.getElementById("1").innerHTML = "DWEC";
+        document.getElementById("2").innerHTML = "IPEI";
+        document.getElementById("3").innerHTML = "DWES";
+        document.getElementById("4").innerHTML = "DAW";
+        document.getElementById("5").innerHTML = "DIW";
+        document.getElementById("6").innerHTML = "PDAU";
+        document.getElementById("7").innerHTML = "PIMD";
+
+        function generarFavorito() {
+            let $modulo = "";
+
+            $modulo = document.getElementById("modulo_fav_input").value;
+            document.getElementById("modulo_fav_p").innerHTML = `Módulo favorito: ${$modulo}`;
+        }
+    </script>
+</body>
+</html>
