@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 3</title>
+</head>
+<body>
+    <h1>Calculadora de notas</h1>
+
+    <p id="notas"></p>
+    <p id="resultados"></p>
+
+    <script>
+        let $exam_1 = parseFloat(prompt("Nota del primer examen")),
+        $exam_2 = parseFloat(prompt("Nota del segundo examen")),
+        $trab_1 = parseFloat(prompt("Nota del primer trabajo")),
+        $trab_2 = parseFloat(prompt("Nota del primer trabajo")),
+        $media_notas = 0.0;
+
+        document.getElementById("notas").innerHTML = `Primer examen: ${$exam_1}<br>Segundo examen: ${$exam_2}<br>Primer trabajo: ${$trab_1}<br>Segundo trabajo: ${$trab_2}`;
+
+        if (($exam_1 < 5) || ($exam_2 < 5) || ($trab_1 < 4.5) || ($trab_2 < 4.5)) {
+            document.getElementById("resultados").innerHTML = "Las notas no son válidas para hacer media.";
+        } else {
+            $media_notas = ((($exam_1 + $exam_2) / 2) * 0.75) + ((($trab_1 + $trab_2) / 2) * 0.25);
+            document.getElementById("resultados").innerHTML = `La nota media es ${$media_notas}.`;
+        }
+    </script>
+</body>
+</html>
