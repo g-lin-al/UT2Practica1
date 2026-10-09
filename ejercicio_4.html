@@ -16,6 +16,19 @@
     <script>
         function calcularDias() {
             let $mes = "";
+
+            $mes = document.getElementById("mes").value;
+            $mes = $mes.toLowerCase(); // Al haber dado en clase las funciones de strings, decidí introducir toLowerCase para poder enviar el nombre del mes escrito con mayúsculas
+
+            if ($mes == "enero" || $mes == "marzo" || $mes == "mayo" || $mes == "julio" || $mes == "agosto" || $mes == "octubre" || $mes == "diciembre") {
+                document.getElementById("resultados").innerHTML = `El mes de ${$mes} tiene 31 días.<br>Tienen los mismos días: enero, marzo, mayo, julio, agosto, octubre y diciembre.`;
+            } else if ($mes == "febrero") {
+                document.getElementById("resultados").innerHTML = `El mes de ${$mes} tiene 28 ó 29 días.<br>No comparte días con ningún otro mes.`;
+            } else if ($mes == "abril" || $mes == "junio" || $mes == "septiembre" || $mes == "noviembre") {
+                document.getElementById("resultados").innerHTML = `El mes de ${$mes} tiene 30 días.<br>Tienen los mismos días: abril, junio, septiembre y noviembre.`;
+            } else {
+                document.getElementById("resultados").innerHTML = "Datos incorrectos.";
+            }
         }
     </script>
 </body>

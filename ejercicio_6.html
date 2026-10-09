@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 6</title>
+</head>
+<body>
+    <script>
+        const INICIO = 1, FINAL = 30;
+        let contador = 0, multiplicacion = 1;
+
+        // Se incluye el número 30 entre los múltiplos
+        for (contador = INICIO; contador <= FINAL; contador++) {
+            if (contador % 3 == 0) {
+                multiplicacion *= contador;
+            }
+        }
+
+        document.write(`Multiplicación de todos los múltiplos entre ${INICIO} y ${FINAL} = ${multiplicacion}.`);
+    </script>
+</body>
+</html>
