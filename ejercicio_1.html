@@ -22,7 +22,6 @@
         </tr>
     </table>
     <p id="modulo_fav_p"></p>
-    <input type="text" id="modulo_fav_input" />
     <button onclick="generarFavorito()">Favorito</button>
 
     <script>
@@ -40,7 +39,7 @@
         function generarFavorito() {
             let $modulo = "";
 
-            $modulo = document.getElementById("modulo_fav_input").value;
+            $modulo = prompt("¿Cuál es tu módulo favorito?");
             document.getElementById("modulo_fav_p").innerHTML = `Módulo favorito: ${$modulo}`;
         }
     </script>
