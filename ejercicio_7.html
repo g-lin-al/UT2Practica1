@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 7</title>
+</head>
+<body>
+    <input type="text" id="numero_adiv" placeholder="Adivinar número..." />
+    <br>
+    <button onclick="adivinarNumero()">Enviar</button>
+
+    <p id="resultados"></p>
+    <script>
+        const MAX_INTENTOS = 6;
+        let numero_secreto = 0, intento = 0;
+
+        numero_secreto = parseInt(prompt("Introduce el número secreto"));
+
+        function adivinarNumero() {
+            intento = document.getElementById("numero_adiv").value;
+
+            for (let i = 0; i < MAX_INTENTOS; i++) {
+                if (intento != MAX_INTENTOS) {
+                    if (numero_secreto == intento) {
+                        document.getElementById("resultados").innerHTML = `Número: ${intento} - ¡ACERTASTE!`;
+                    } else {
+                        document.getElementById("resultados").innerHTML += `Número: ${intento} - No acertaste. Quedan ${(MAX_INTENTOS - i) - 1} intentos.<br>`;
+                        intento = parseInt(prompt("Inténtalo de nuevo:"));
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>
